@@ -16,3 +16,4 @@ results/
 .nextflow*
 data/*.fastq*
 data/*.fastq*
+data/*.fastq*

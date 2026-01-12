@@ -1,3 +1,16 @@
+# Ignore raw sequencing data
+data/*.fastq
+data/*.fastq.gz
+
+# Nextflow working directory
+work/
+
+# Reports
+*.html
+*.txt
+
+# OS files
+.DS_Store
 work/
 results/
 .nextflow*

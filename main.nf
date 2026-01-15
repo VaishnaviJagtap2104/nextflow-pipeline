@@ -1,27 +1,17 @@
 nextflow.enable.dsl=2
 
-include { FASTQC } from './modules/fastqc.nf'
-include { CUTADAPT } from './modules/cutadapt.nf'
+include { CUTADAPT }  from './modules/cutadapt.nf'
+include { FASTQC }    from './modules/fastqc.nf'
+include { ALIGNMENT } from './modules/alignment.nf'
+include { PIPELINE }  from './workflow.nf'
 
 workflow {
 
-    /*
-     * Create channel from FASTQ files
-     */
     Channel
-        .fromPath("data/*.fastq*")
+        .fromPath('data/*.fastq.gz')
         .map { file -> tuple(file.baseName, file) }
-        .set { fastq_ch }
+        .set { reads_ch }
 
-    /*
-     * Step 1: Trimming
-     */
-    trimmed_ch = CUTADAPT(fastq_ch)
-
-    /*
-     * Step 2: FastQC on trimmed reads
-     */
-    FASTQC(trimmed_ch)
+    PIPELINE(reads_ch)
 }
-
 

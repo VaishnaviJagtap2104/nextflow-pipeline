@@ -8,7 +8,8 @@ process FASTQC {
     tuple val(sample_id), path(reads)
 
     output:
-    path "*_fastqc.*"
+    path "*_fastqc.html"
+    path "*_fastqc.zip"
 
     script:
     """

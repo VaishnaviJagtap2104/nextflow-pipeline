@@ -12,9 +12,7 @@ process CUTADAPT {
 
     script:
     """
-    cutadapt -q 20 -m 30 \
-      -o ${sample_id}_trimmed.fastq.gz \
-      ${reads}
+    cutadapt -q 20 -m 30 -o ${sample_id}_trimmed.fastq.gz ${reads}
     """
 }
 

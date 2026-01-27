@@ -1,14 +1,17 @@
-nextflow.enable.dsl=2
-
-include { PIPELINE }  from './workflow.nf'
+include { PIPELINE } from './workflows/workflow.nf'
 
 workflow {
 
-    Channel
-        .fromPath('data/*.fastq.gz')
-        .map { file -> tuple(file.baseName, file) }
-        .set { reads_ch }
+    reads_ch = Channel
+        .fromPath(params.reads)
+        .map { file ->
+            def sample_id = file.name.replaceFirst(/\.fastq\.gz$/, '')
+            tuple(sample_id, file)
+        }
 
-    PIPELINE(reads_ch)
+    reads_ch.view()
+
+    ref_fa_ch = Channel.fromPath(params.reference)
+
+    PIPELINE(reads_ch, ref_fa_ch)
 }
-

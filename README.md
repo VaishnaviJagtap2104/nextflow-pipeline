@@ -1,7 +1,7 @@
 # Nextflow Automated Variant Calling Pipeline
 
 This repository contains an automated bioinformatics pipeline built using **Nextflow DSL2** for processing sequencing data and performing **variant calling**.
-This project implements a Nextflow DSL2-based bioinformatics pipeline for automated processing and variant calling of next-generation sequencing (NGS) data. The pipeline integrates multiple analysis stages including quality assessment, adapter and quality trimming, alignment against a genome, sorting and indexing of alignment files, and downstream variant detection. Each step is modularized to ensure clarity, reusability, and ease of maintenance.
+The pipeline integrates multiple analysis stages including quality assessment, adapter and quality trimming, alignment against a genome, sorting and indexing of alignment files, and downstream variant detection. Each step is modularized to ensure clarity, reusability, and ease of maintenance.
 The pipeline performs the following steps:
 
 1. Quality trimming using **Cutadapt**

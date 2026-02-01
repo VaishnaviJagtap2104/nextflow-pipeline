@@ -11,8 +11,8 @@ process SORTBAM {
 
     script:
     """
-    samtools sort -@ 4 ${bam} -o ${sample_id}.sorted.bam
-    samtools index ${sample_id}.sorted.bam
+    ${params.samtools} sort -@ 4 ${bam} -o ${sample_id}.sorted.bam
+    ${params.samtools} index ${sample_id}.sorted.bam
     """
 }
 

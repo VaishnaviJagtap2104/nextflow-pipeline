@@ -6,8 +6,8 @@ process VARIANT_CALLING {
 
     input:
     tuple val(sample_id), path(sorted_bam), path(sorted_bai)
-    path reference
-    path indexed_ref
+    tuple path(reference), path(indexes)
+
 
     output:
       tuple val(sample_id), path("${sample_id}.vcf.gz"), path("${sample_id}.vcf.gz.tbi")
@@ -15,8 +15,8 @@ process VARIANT_CALLING {
 
     script:
     """
-    bcftools mpileup -f $reference $sorted_bam | \
-        bcftools call -mv -Oz -o ${sample_id}.vcf.gz
+    ${params.bcftools} mpileup -f ${reference} ${sorted_bam} | \
+    ${params.bcftools} call -mv -Oz -o ${sample_id}.vcf.gz
 
     tabix -p vcf ${sample_id}.vcf.gz
     """

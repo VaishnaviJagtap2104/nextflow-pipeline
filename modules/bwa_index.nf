@@ -4,11 +4,12 @@ process BWA_INDEX {
         path reference
 
     output:
-        path "${reference}*"
+        tuple path(reference), path("${reference}.*")
 
     script:
     """
-    bwa index $reference
+    ${params.bwa} index ${reference}
     """
 }
+
 

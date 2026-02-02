@@ -10,6 +10,6 @@ dependencies:
   - samtools=1.17
   - bcftools=1.17
   - fastqc
-  - trimmomatic
-  - multiqc
-
+  - cutadapt
+  - sratoolkit
+  - openjdk 

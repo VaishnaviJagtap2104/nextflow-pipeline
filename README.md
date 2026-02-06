@@ -14,3 +14,13 @@ The workflow is designed with reproducibility and scalability in mind, allowing 
 
 The modular design of the pipeline enables easy customization and extension, allowing additional steps such as quality control reporting, variant annotation, or filtering to be incorporated as needed. This makes the workflow suitable both for learning purposes and for real-world bioinformatics analyses.
 
+Clone the Repository
+git clone https://github.com/yourusername/automated_pipeline_development.git
+cd automated_pipeline_development
+
+Create Conda Environment
+
+The environment file is included in the repo.
+
+conda env create -f environment.yml
+conda activate bnf

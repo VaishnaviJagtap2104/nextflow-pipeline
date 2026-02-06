@@ -13,14 +13,3 @@ The pipeline performs the following steps:
 The workflow is designed with reproducibility and scalability in mind, allowing users to execute the pipeline consistently across different computing environments such as local machines, WSL, and high-performance computing (HPC) clusters. By leveraging Nextflow’s workflow management capabilities, the pipeline efficiently handles large datasets, manages dependencies, and supports parallel execution of tasks.
 
 The modular design of the pipeline enables easy customization and extension, allowing additional steps such as quality control reporting, variant annotation, or filtering to be incorporated as needed. This makes the workflow suitable both for learning purposes and for real-world bioinformatics analyses.
-
-Clone the Repository
-git clone https://github.com/yourusername/automated_pipeline_development.git
-cd automated_pipeline_development
-
-Create Conda Environment
-
-The environment file is included in the repo.
-
-conda env create -f environment.yml
-conda activate bnf

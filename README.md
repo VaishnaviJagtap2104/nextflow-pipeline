@@ -33,5 +33,9 @@ nextflow run main.nf
 
 ## 🛠️ Requirements
 - Nextflow  
-- Conda (Anaconda/Miniconda)  
+- Conda (Anaconda) 
 - Required bioinformatics tools
+- Fastqc
+- Cutadapt
+- BCFtools
+- BWA

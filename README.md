@@ -31,7 +31,7 @@ conda activate bnf
 nextflow run main.nf
 ```
 
-## 🛠️ Requirements
+## Requirements
 - Nextflow  
 - Conda (Anaconda) 
 - Required bioinformatics tools

@@ -14,12 +14,24 @@ The workflow is designed with reproducibility and scalability in mind, allowing 
 
 The modular design of the pipeline enables easy customization and extension, allowing additional steps such as quality control reporting, variant annotation, or filtering to be incorporated as needed. This makes the workflow suitable both for learning purposes and for real-world bioinformatics analyses.
 
-How To Run The Pipeline
-Clone the Repository
-https://github.com/VaishnaviJagtap2104/nextflow-pipeline.git
 
-Environment Setup
+## Clone the Repository
+```bash
+git clone https://github.com/Vaishnavijagtap2104/nextflow-pipeline.git
+cd nextflow-pipeline
+```
+
+## Environment Setup
+```bash
 conda activate bnf
+```
 
-Run the Pipeline
+## Run the Pipeline
+```bash
 nextflow run main.nf
+```
+
+## 🛠️ Requirements
+- Nextflow  
+- Conda (Anaconda/Miniconda)  
+- Required bioinformatics tools

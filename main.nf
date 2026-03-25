@@ -12,7 +12,7 @@ workflow {
 
     reads_ch.view()
     
-    ref_ch = Channel.fromPath(params.reference)
-    PIPELINE(reads_ch, ref_ch)  
+    ref_ch = Channel.fromPath(params.reference).first()   
+    PIPELINE(reads_ch, ref_ch) 
 
 }

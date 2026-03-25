@@ -13,7 +13,7 @@ workflow PIPELINE {
 
     main:
 
-        indexed_ref = BWA_INDEX(reference)
+        indexed_ref = BWA_INDEX(reference).first()
 
         trimmed_ch = CUTADAPT(reads_ch)
         FASTQC(trimmed_ch)

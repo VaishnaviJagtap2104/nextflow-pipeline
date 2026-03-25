@@ -1,4 +1,5 @@
 process BWA_INDEX {
+    stageInMode 'copy'        
 
     input:
         path reference

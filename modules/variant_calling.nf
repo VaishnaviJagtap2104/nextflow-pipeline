@@ -17,8 +17,7 @@ process VARIANT_CALLING {
     """
     ${params.bcftools} mpileup -f ${reference} ${sorted_bam} | \
     ${params.bcftools} call -mv -Oz -o ${sample_id}.vcf.gz
-
-    tabix -p vcf ${sample_id}.vcf.gz
+    ${params.tabix} -p vcf ${sample_id}.vcf.gz
     """
 
 }

@@ -11,9 +11,14 @@ artificial sequences added during library preparation and must be removed
 before alignment. Reads shorter than 30bp after trimming are discarded.
 ---
 2. Quality check using **FastQC**
-3. Read alignment using **BWA**
-4. BAM sorting using **Samtools**
-5. Variant calling using **BCFTools**
+   ---
+   Generates a quality control report for each sample after trimming. The HTML
+report shows per-base quality scores, GC content, duplication levels, and
+adapter contamination — confirming that trimming worked correctly.
+---
+4. Read alignment using **BWA**
+5. BAM sorting using **Samtools**
+6. Variant calling using **BCFTools**
 
 The workflow is designed with reproducibility and scalability in mind, allowing users to execute the pipeline consistently across different computing environments such as local machines, WSL, and high-performance computing (HPC) clusters. By leveraging Nextflow’s workflow management capabilities, the pipeline efficiently handles large datasets, manages dependencies, and supports parallel execution of tasks.
 

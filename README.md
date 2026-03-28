@@ -22,13 +22,21 @@ adapter contamination — confirming that trimming worked correctly.
 files (.amb, .ann, .bwt, .pac, .sa) that allow BWA to rapidly search the
 genome during alignment. Runs once and is shared across all samples.
 ---
-4. BWA mem (ALignment) and Samtools (Sorting)
+4. BWA mem (ALignment) 
    ---
    Aligns trimmed reads to the reference genome. BWA-MEM is optimised for
 reads of 70bp and longer. The output is piped directly to Samtools to
 convert from SAM (text) to the smaller BAM (binary) format.
 ---
+5. Samtools sort + index
+   ---
+   Sorts the BAM file by genomic coordinate, which is required by variant
+callers. An index (.bai) is then built so tools can instantly jump to any
+genomic region without reading the entire file.
+  ---
 6. Variant calling using **BCFTools**
+  ---
+  
 
 The workflow is designed with reproducibility and scalability in mind, allowing users to execute the pipeline consistently across different computing environments such as local machines, WSL, and high-performance computing (HPC) clusters. By leveraging Nextflow’s workflow management capabilities, the pipeline efficiently handles large datasets, manages dependencies, and supports parallel execution of tasks.
 

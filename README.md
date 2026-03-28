@@ -62,3 +62,4 @@ nextflow run main.nf
 - Cutadapt
 - BCFtools
 - BWA
+- Samtools

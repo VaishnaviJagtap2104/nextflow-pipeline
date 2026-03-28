@@ -30,9 +30,9 @@ convert from SAM (text) to the smaller BAM (binary) format.
 ---
 5. Variant calling using **BCFTools** 
    ---
-  Detects SNPs and indels from the sorted BAM file. BCFtools mpileup computes
-genotype likelihoods at each position, and BCFtools call identifies variant
-sites. Output is compressed and indexed with tabix for fast region queries.
+    Detects SNPs and indels from the sorted BAM file. BCFtools mpileup computes
+   genotype likelihoods at each position, and BCFtools call identifies variant
+   sites. Output is compressed and indexed with tabix for fast region queries.
 
 ---
 

@@ -22,21 +22,15 @@ adapter contamination — confirming that trimming worked correctly.
 files (.amb, .ann, .bwt, .pac, .sa) that allow BWA to rapidly search the
 genome during alignment. Runs once and is shared across all samples.
 ---
-4. BWA mem (ALignment) 
+4. BWA mem (ALignment) and Samtools sort + index
    ---
    Aligns trimmed reads to the reference genome. BWA-MEM is optimised for
 reads of 70bp and longer. The output is piped directly to Samtools to
 convert from SAM (text) to the smaller BAM (binary) format.
 ---
-5. Samtools sort + index
+5. Variant calling using **BCFTools** 
    ---
-   Sorts the BAM file by genomic coordinate, which is required by variant
-callers. An index (.bai) is then built so tools can instantly jump to any
-genomic region without reading the entire file.
-  ---
-6. Variant calling using **BCFTools**
-   ---
-   Detects SNPs and indels from the sorted BAM file. BCFtools mpileup computes
+  Detects SNPs and indels from the sorted BAM file. BCFtools mpileup computes
 genotype likelihoods at each position, and BCFtools call identifies variant
 sites. Output is compressed and indexed with tabix for fast region queries.
 ---
@@ -58,7 +52,6 @@ nextflow-pipeline/
 │   ├── cutadapt.nf
 │   ├── fastqc.nf
 │   ├── alignment.nf
-│   ├── sortbam.nf
 │   └── variant_calling.nf
 ├── data/                    # Input FASTQ files
 ├── reference/               # Reference genome

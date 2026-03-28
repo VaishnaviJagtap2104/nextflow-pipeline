@@ -22,7 +22,7 @@ adapter contamination — confirming that trimming worked correctly.
 files (.amb, .ann, .bwt, .pac, .sa) that allow BWA to rapidly search the
 genome during alignment. Runs once and is shared across all samples.
 ---
-4. BWA mem (ALignment) and Samtools sort + index
+4. BWA mem (Alignment) and Samtools sort + index
    ---
    Aligns trimmed reads to the reference genome. BWA-MEM is optimised for
 reads of 70bp and longer. The output is piped directly to Samtools to

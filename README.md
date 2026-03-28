@@ -5,6 +5,11 @@ The pipeline integrates multiple analysis stages including quality assessment, a
 The pipeline performs the following steps:
 
 1. Quality trimming using **Cutadapt**
+   ---
+   Trims adapter sequences and low-quality bases from raw reads. Adapters are
+artificial sequences added during library preparation and must be removed
+before alignment. Reads shorter than 30bp after trimming are discarded.
+---
 2. Quality check using **FastQC**
 3. Read alignment using **BWA**
 4. BAM sorting using **Samtools**

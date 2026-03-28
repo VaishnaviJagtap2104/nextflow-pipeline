@@ -14,6 +14,29 @@ The workflow is designed with reproducibility and scalability in mind, allowing 
 
 The modular design of the pipeline enables easy customization and extension, allowing additional steps such as quality control reporting, variant annotation, or filtering to be incorporated as needed. This makes the workflow suitable both for learning purposes and for real-world bioinformatics analyses.
 
+## Project Structure
+```
+nextflow-pipeline/
+├── main.nf                  # Entry point
+├── nextflow.config          # Parameters and tool paths
+├── workflows/
+│   └── workflow.nf          # Pipeline workflow definition
+├── modules/
+│   ├── bwa_index.nf
+│   ├── cutadapt.nf
+│   ├── fastqc.nf
+│   ├── alignment.nf
+│   ├── sortbam.nf
+│   └── variant_calling.nf
+├── data/                    # Input FASTQ files
+├── reference/               # Reference genome
+└── results/                 # Pipeline outputs (auto-created)
+    ├── trimmed/
+    ├── fastqc/
+    ├── bam/
+    └── vcf/
+```
+
 
 ## Clone the Repository
 ```bash

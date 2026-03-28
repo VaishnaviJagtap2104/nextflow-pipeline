@@ -35,11 +35,7 @@ callers. An index (.bai) is then built so tools can instantly jump to any
 genomic region without reading the entire file.
   ---
 6. Variant calling using **BCFTools**
-  ---
-  Detects SNPs and indels from the sorted BAM file. BCFtools mpileup computes
-genotype likelihoods at each position, and BCFtools call identifies variant
-sites. Output is compressed and indexed with tabix for fast region queries.
----
+
   
 
 The workflow is designed with reproducibility and scalability in mind, allowing users to execute the pipeline consistently across different computing environments such as local machines, WSL, and high-performance computing (HPC) clusters. By leveraging Nextflow’s workflow management capabilities, the pipeline efficiently handles large datasets, manages dependencies, and supports parallel execution of tasks.

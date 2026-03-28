@@ -16,9 +16,14 @@ before alignment. Reads shorter than 30bp after trimming are discarded.
 report shows per-base quality scores, GC content, duplication levels, and
 adapter contamination — confirming that trimming worked correctly.
 ---
-4. Read alignment using **BWA**
-5. BAM sorting using **Samtools**
-6. Variant calling using **BCFTools**
+3. Read alignment using **BWA**
+   ---
+   Indexes the reference genome before alignment. This creates binary index
+files (.amb, .ann, .bwt, .pac, .sa) that allow BWA to rapidly search the
+genome during alignment. Runs once and is shared across all samples.
+---
+4. BAM sorting using **Samtools**
+5. Variant calling using **BCFTools**
 
 The workflow is designed with reproducibility and scalability in mind, allowing users to execute the pipeline consistently across different computing environments such as local machines, WSL, and high-performance computing (HPC) clusters. By leveraging Nextflow’s workflow management capabilities, the pipeline efficiently handles large datasets, manages dependencies, and supports parallel execution of tasks.
 

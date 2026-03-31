@@ -86,6 +86,7 @@ nextflow run main.nf
 - Required bioinformatics tools
 - Fastqc
 - Cutadapt
-- BCFtools
 - BWA
 - Samtools
+- BCFtools
+
